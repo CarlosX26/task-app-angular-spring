@@ -1,0 +1,39 @@
+:host {
+  width: 100%;
+}
+
+ul {
+  min-height: 200px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  li {
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    min-height: 40px;
+
+    p {
+      cursor: pointer;
+    }
+    button {
+      background: none;
+    }
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #656565;
+}

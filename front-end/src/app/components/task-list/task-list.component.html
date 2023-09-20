@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor="let task of taskList">
+    <p
+      (click)="isCompleted(task.id)"
+      [ngClass]="task.completed ? 'completed' : ''"
+    >
+      {{ task.title }}
+    </p>
+
+    <button (click)="deleteTask(task.id)">
+      <span class="material-symbols-outlined"> delete </span>
+    </button>
+  </li>
+</ul>
