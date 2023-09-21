@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { HotToastService } from "@ngneat/hot-toast";
 import { TaskService } from "src/app/services/task.service";
 
 @Component({
@@ -9,10 +10,18 @@ import { TaskService } from "src/app/services/task.service";
 export class FormComponent {
   title: string = "";
 
-  constructor(private taskService: TaskService) {}
+  constructor(
+    private taskService: TaskService,
+    private toast: HotToastService
+  ) {}
 
   submit() {
-    this.taskService.createTask(this.title);
-    this.title = "";
+    if (this.title.length >= 8) {
+      this.taskService.createTask(this.title);
+      this.title = "";
+      return;
+    }
+
+    this.toast.error("Mínimo 8 caracteres");
   }
 }
