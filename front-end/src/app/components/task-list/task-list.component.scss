@@ -1,39 +1,64 @@
+@import "../../../theme.scss";
+
 :host {
   width: 100%;
 }
 
 ul {
-  min-height: 200px;
-  border: 2px solid #fff;
+  border: 2px solid $white;
   border-radius: 8px;
   width: 100%;
   padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-height: 280px;
+  height: 280px;
   overflow: hidden;
   overflow-y: scroll;
 
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 0 8px 8px 0;
+    background: $gray-2;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0 8px 8px 0;
+    background: $gray-3;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
   li {
-    background-color: #fff;
+    background-color: $gray-1;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px;
     min-height: 40px;
+    height: 40px;
 
     p {
       cursor: pointer;
+      font-weight: 600;
+      max-width: 80%;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
     button {
       background: none;
+      transition: 0.3s;
+      &:hover {
+        color: $alert;
+      }
     }
   }
 }
 
 .completed {
   text-decoration: line-through;
-  color: #656565;
+  color: $gray-2;
 }
