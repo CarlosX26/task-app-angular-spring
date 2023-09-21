@@ -57,3 +57,4 @@ Inicie o servidor
 **Front-end:** Angular, TypeScript e SASS
 
 **Back-end:** Java, SpringBoot e PostgreSQL
+
