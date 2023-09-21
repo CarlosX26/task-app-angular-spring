@@ -51,7 +51,9 @@ public class TaskController {
 
     if (task != null) {
 
-      task.setCompleted(true);
+      Boolean isCompleted = task.isCompleted();
+
+      task.setCompleted(!isCompleted);
 
       taskRepository.save(task);
 
